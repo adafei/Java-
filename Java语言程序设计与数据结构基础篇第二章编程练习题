@@ -1,0 +1,182 @@
+2.1
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter a degree in Celsius:");
+	  double Celsius = input.nextDouble();
+	  double Fahrenheit = (9.0 / 5) * Celsius+32;
+	  System.out.print(Celsius + " Celsius is " + Fahrenheit + " Fahrenheit");
+  }
+}
+运行结果：
+Enter a degree in Celsius:43.5
+43.5 Celsius is 110.3 Fahrenheit
+
+2.2
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter The radius and length of a cylinder:");
+	  double radius = input.nextDouble();
+	  double length = input.nextDouble();
+	  double area = radius * radius * 3.14159;
+	  double volume = area * length;
+	  System.out.println("The area is " + area);
+	  System.out.println("The vulume is " + volume);
+  }
+}
+运行结果：
+Enter The radius and length of a cylinder:5.5 12
+The area is 95.0330975
+The vulume is 1140.39717
+
+2.3
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter a value for feet:");
+	  double feet = input.nextDouble();
+	  double meters = feet * 0.305;
+	  System.out.println(feet + " feet is " + meters + " meters");
+  }
+}
+运行结果：
+Enter a value for feet:16.5
+16.5 feet is 5.0325 meters
+
+2.4
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter a number in pounds:");
+	  double pounds = input.nextDouble();
+	  double kilograms = pounds * 0.454;
+	  System.out.println(pounds + " pounds is " + kilograms + " kilograms");
+  }
+}
+运行结果
+Enter a number in pounds:55.5
+55.5 pounds is 25.197 kilograms
+
+2.5
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter the subtotal and a gratuity rate:");
+	  double subtotal = input.nextDouble();
+	  double gratuity = subtotal * 0.15;
+	  double total = subtotal + gratuity;
+	  System.out.println("The grtuity is " + gratuity + " and total is " + total);
+  }
+}
+运行结果：
+Enter the subtotal and a gratuity rate:10 15
+The grtuity is 1.5 and total is 11.5
+
+2.6
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter a number between 0 and 1000:");
+	  int number = input.nextInt();
+	  int Single_digits = number % 10;
+	  int Ten_digits = (number / 10) % 10;
+	  int Hundred_digits = number / 100;
+	  int Sum = Single_digits + Ten_digits + Hundred_digits;
+	  System.out.println("The sum of the digits is " + Sum);
+  }
+}
+运行结果：
+Enter a number between 0 and 1000:999
+The sum of the digits is 27
+
+2.7
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter the number of minutes:");
+	  int minutes = input.nextInt();
+	  int days = (minutes / (60 * 24)) % 365;
+	  int years = (minutes / (60 * 24)) / 365;
+	  System.out.println(minutes + " minutes is approximately " + years + " years " + days + " days");
+  }
+}
+运行结果：
+Enter the number of minutes:1000000000
+1000000000 minutes is approximately 1902 years 214 days
+
+2.8
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter the time zone offset to GMT:");
+	  int gmt = input.nextInt();
+	  long Gmt =  gmt * 60 * 60 * 1000;
+	  long totalMilliseconds = System.currentTimeMillis() - Gmt;
+	  long totalSeconds = totalMilliseconds / 1000;
+	  long currentSecond = totalSeconds % 60;
+	  long totalMinutes = totalSeconds / 60;
+	  long currentMinute = totalMinutes % 60;
+	  long totalHours = totalMinutes / 60;
+	  long currentHour = totalHours % 24;
+	  System.out.println("Current time is " + currentHour + ":" + currentMinute + ":" + currentSecond + " GMT");  }
+}
+
+2.9
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter v0, vl, and t:");
+	  double v0 = input.nextDouble();
+	  double v1 = input.nextDouble();
+	  double t = input.nextDouble();
+	  double a =  (v1 - v0) / t;
+	  System.out.println("The average acceleration is " + a);  
+  }
+}
+运行结果：
+Enter v0, vl, and t:5.5 50.9 4.5
+The average acceleration is 10.088888888888889
+
+2.10
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter the amount of water in kilograms:");
+	  double M = input.nextDouble();
+	  System.out.print("Enter the initial temperature:");
+	  double initial = input.nextDouble();
+	  System.out.print("Enter the final temperature:");
+	  double final_WD = input.nextDouble();
+	  double Q = M * (final_WD - initial) * 4184;
+	  System.out.println("The energy needed is " + Q);  
+  }
+}
+运行结果：
+Enter the amount of water in kilograms:55.5
+Enter the initial temperature:3.5
+Enter the final temperature:10.5
+The energy needed is 1625484.0
+
+2.11
+
