@@ -179,4 +179,257 @@ Enter the final temperature:10.5
 The energy needed is 1625484.0
 
 2.11
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the number of years:");
+		int years = input.nextInt();
+		System.out.println("未来" + years + "年人口:" + (int)(312032486 + 
+				(60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0) * years));
+	  }
+	}
+运行结果：
+Enter the number of years:5
+未来5年人口:325932969
+
+2.12
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter speed and acceleration:");
+		double v = input.nextDouble();
+		double a = input.nextDouble();
+		double l = v * v / (2 * a);
+		System.out.println("The minimum runway length for this airplane is " + l);
+	  }
+	}
+运行结果：
+Enter speed and acceleration:60 3.5
+The minimum runway length for this airplane is 514.2857142857143
+
+2.13
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the monthly saving amount:");
+		double money = input.nextDouble();
+		double m_1 = 100 * (1 + 0.00417);
+		double m_2 = (100 + m_1) * (1 + 0.00417);
+		double m_3 = (100 + m_2) * (1 + 0.00417);
+		double m_4 = (100 + m_3) * (1 + 0.00417);
+		double m_5 = (100 + m_4) * (1 + 0.00417);
+		double m_6 = (100 + m_5) * (1 + 0.00417);
+		System.out.println("After the sixth month , the account value is $" + m_6);
+	  }
+	}
+运行结果：
+Enter the monthly saving amount:100
+After the sixth month , the account value is $608.8181155768638
+
+2.14
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter weight in pounds:");
+		double w = input.nextDouble();
+		System.out.print("Enter height in inches:");
+		double h = input.nextDouble();
+		double bmi = (w * 0.45359237) / Math.pow((h * 0.0254), 2);
+		System.out.println("BMI is " + bmi);
+	  }
+	}
+运行结果：
+Enter weight in pounds:95.5
+Enter height in inches:50
+BMI is 26.857257942215885
+
+2.15
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter xl and yl:");
+		double x1 = input.nextDouble();
+		double y1 = input.nextDouble();
+		System.out.print("Enter x2 and y2:");
+		double x2 = input.nextDouble();
+		double y2 = input.nextDouble();
+		double distance = Math.pow((Math.pow(x2 -x1, 2) + Math.pow(y2 -y1, 2)), 0.5);
+		System.out.println("The distance between the two points is  " + distance);
+	  }
+	}
+运行结果：
+Enter xl and yl:1.5 -3.4
+Enter x2 and y2:4 5
+The distance between the two points is  8.764131445842194
+
+2.16
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the side:");
+		double s = input.nextDouble();
+		double area = 3 *  Math.pow(3, 0.5) / 2 * Math.pow(s, 2);
+		System.out.println("The area of the hexagon is  " + area);
+	  }
+	}
+运行结果：
+Enter the side:5.5
+The area of the hexagon is  78.59180539343781
+
+2.17 不小心删掉了，懒得重新码了 o_O
+2.18
+public class Exercises{
+	public static void main(String[] args) {
+		System.out.println("a    " + "b    " + "pow(a, b) ");
+		System.out.println(1 + "    " + 2 + "    " + (int)Math.pow(1, 2) );
+		System.out.println(2 + "    " + 3 + "    " + (int)Math.pow(2, 3) );
+		System.out.println(3 + "    " + 4 + "    " + (int)Math.pow(3, 4) );
+		System.out.println(4 + "    " + 5 + "    " + (int)Math.pow(4, 5) );
+		System.out.println(5 + "    " + 6 + "    " + (int)Math.pow(5, 6) );
+	  }
+	}
+运行结果：
+a    b    pow(a, b) 
+1    2    1
+2    3    8
+3    4    81
+4    5    1024
+5    6    15625
+
+2.19
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter three points for a triangle:");
+	  double x1 = input.nextDouble();
+	  double y1 = input.nextDouble();
+	  double x2 = input.nextDouble();
+	  double y2 = input.nextDouble();
+	  double x3 = input.nextDouble();
+	  double y3 = input.nextDouble();
+	  double xy1_xy2= Math.pow(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2), 0.5);
+	  double xy2_xy3= Math.pow(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2), 0.5);
+	  double xy3_xy1= Math.pow(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2), 0.5);
+	  double s = (xy1_xy2 + xy2_xy3 + xy3_xy1) / 2;
+	  double area = Math.pow(s * (s - xy1_xy2) * (s - xy2_xy3) * (s - xy3_xy1),0.5);
+	  System.out.print("The area of the triangle is " + area);
+  }
+}
+运行结果：
+Enter three points for a triangle:1.5 -3.4 4.6 5 9.5 -3.4
+The area of the triangle is 33.600000000000016
+
+2.20
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter balance and interest rate (e.g., 3 for 3X)::");
+	  double balance = input.nextDouble();
+	  double rate = input.nextDouble();
+	  double interest = balance * (rate / 1200);
+	  System.out.print("The interest is " + interest);
+  }
+}
+运行结果：
+Enter balance and interest rate (e.g., 3 for 3X)::1000 3.5
+The interest is 2.916666666666667
+
+2.21
+import java.util.Scanner;
+
+public class Exercises{
+  public static void main(String[] args) {
+	  Scanner input = new Scanner(System.in);	
+	  System.out.print("Enter investment amount:");
+	  double i = input.nextDouble();
+	  System.out.print("Enter annual interest rate in percentage:");
+	  double a= input.nextDouble();
+	  System.out.print("Enter number of years:");
+	  double y = input.nextDouble();
+	  double Accumulated = i * Math.pow(1 + a / 1200, y * 12);
+	  System.out.print("Accumulated value is $" + Accumulated);
+  }
+}
+运行结果：
+Enter investment amount:1000
+Enter annual interest rate in percentage:3.25
+Enter number of years:1
+Accumulated value is $1032.9885118105894
+
+2.22
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter an amount in int, for example 1156: ");
+		int amount = input.nextInt();
+		int numberOfOneDollars = amount / 100;
+		int remainingAmount = amount % 100;
+
+		int numberOfQuarters = remainingAmount / 25;
+		remainingAmount = remainingAmount % 25;
+
+		int numberOfDimes = remainingAmount / 10;
+		remainingAmount = remainingAmount % 10;
+
+		int numberOfNickels = remainingAmount / 5;
+		remainingAmount = remainingAmount % 5;
+
+		int numberOfPennies = remainingAmount;
+
+		System.out.println("Your amount " + amount + " consists of"); 
+		System.out.println("    " + numberOfOneDollars + " dollars");
+		System.out.println("    " + numberOfQuarters + " quarters ");
+		System.out.println("    " + numberOfDimes + " dimes"); 
+		System.out.println("    " + numberOfNickels + " nickels");
+		System.out.println("    " + numberOfPennies + " pennies");
+  }
+}
+运行结果：
+Enter an amount in int, for example 1156: 1156
+Your amount 1156 consists of
+    11 dollars
+    2 quarters 
+    0 dimes
+    1 nickels
+    1 pennies
+
+2.23
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter the driving distance: ");
+		double d = input.nextDouble();
+		System.out.print("Enter miles per gallon: ");
+		double m = input.nextDouble();
+		System.out.print("Enter price per gallon: ");
+		double p = input.nextDouble();
+		double c = d / m * p;
+		System.out.println("The cost of driving is $ " + c);
+  }
+}
+运行结果：
+Enter the driving distance: 900.5
+Enter miles per gallon: 25.5
+Enter price per gallon: 3.55
+The cost of driving is $ 125.36372549019607
 
