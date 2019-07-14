@@ -1,8 +1,124 @@
 1.1
-public class Welcome{
+public class Exercises{
   public static void main(String[] args) {
     System.out.println("Welcome to Java");
     System.out.println("Welcome to Computer Science");
     System.out.println("Programming is fun");
   }
 }
+
+1.2
+public class Exercises{
+  public static void main(String[] args) {
+    System.out.println("Welcome to Java");
+    System.out.println("Welcome to Java");
+    System.out.println("Welcome to Java");
+    System.out.println("Welcome to Java");
+    System.out.println("Welcome to Java");
+  }
+}
+
+1.3
+public class Exercises{
+  public static void main(String[] args) {
+    System.out.println("    J    A   V     V    A   ");
+    System.out.println("    J   A A   V   V    A A  ");
+    System.out.println("J   J  AAAAA   V V    AAAAA ");
+    System.out.println(" J J  A     A   V    A     A");
+  }
+}
+
+1.4
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("a   a^2  a^3");
+	  System.out.println(1 + "   " + 1 * 1 + "    " + 1 * 1 * 1);
+	  System.out.println(2 + "   " + 2 * 2 + "    " + 2 * 2 * 2);
+	  System.out.println(3 + "   " + 3 * 3 + "    " + 3 * 3 * 3);
+	  System.out.println(4 + "   " + 4 * 4 + "   " + 4 * 4 * 4);
+  }
+}
+
+1.5
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println((9.5 * 4.5 - 2.5 * 3) / (45.5 - 3.5));
+  }
+}
+显示结果：0.8392857142857143
+
+1.6
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9);
+  }
+}
+显示结果：45
+
+1.7
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println(4 *(1.0 - 1.0 / 3 + 1.0 / 5 - 1.0 / 7 + 1.0 / 9 - 1.0 / 11));
+	  System.out.println(4 *(1.0 - 1.0 / 3 + 1.0 / 5 - 1.0 / 7 + 1.0 / 9 - 1.0 / 11 + 1.0 / 13));
+  }
+}
+显示结果：
+2.9760461760461765
+3.2837384837384844
+
+1.8
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("周长:" + 2 * 5.5 * 3.14);
+	  System.out.println("面积:" + 5.5 * 5.5 * 3.14);
+  }
+}
+显示结果：
+周长:34.54
+面积:94.985
+
+1.9
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("周长:" + 2 * (4.5 + 7.9));
+	  System.out.println("面积:" + 4.5 * 7.9);
+  }
+}
+显示结果：
+周长:24.8
+面积:35.550000000000004
+
+1.10
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("平均速度:" + (14.0 / 1.6) / ((45.0 * 60 + 30) / 3600));
+  }
+}
+显示结果：
+平均速度:11.538461538461538
+
+1.11
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("未来1年人口:" + (312032486 + 60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0));
+	  System.out.println("未来2年人口:" + (312032486 + (60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0) * 2));
+	  System.out.println("未来3年人口:" + (312032486 + (60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0) * 3));
+	  System.out.println("未来4年人口:" + (312032486 + (60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0) * 4));
+	  System.out.println("未来5年人口:" + (312032486 + (60 * 60 * 24 * 365 / 7.0 - 60 * 60 * 24 * 365 / 13.0 + 60 * 60 * 24 * 365 / 45.0) * 5));
+  }
+}
+显示结果：
+未来1年人口:3.148125827032967E8
+未来2年人口:3.175926794065934E8
+未来3年人口:3.203727761098901E8
+未来4年人口:3.231528728131868E8
+未来5年人口:3.2593296951648355E8
+
+1.12
+public class Exercises{
+  public static void main(String[] args) {
+	  System.out.println("平均速度:" + (24 * 1.6) / ((60 * 60 + 40 * 60 + 30) / 3600.0) + "千米每小时");
+  }
+}
+显示结果：
+平均速度:22.92537313432836千米每小时
