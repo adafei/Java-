@@ -1,0 +1,199 @@
+3.1
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter a, b, c: ");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		
+		double r = Math.pow(b, 2) - 4 * a * c;
+		double r1 = (-b + Math.pow(r, 0.5)) / 2*a;
+		double r2 = (-b - Math.pow(r, 0.5)) / 2*a;
+		
+		if (r > 0)
+			System.out.println("The equation has two roots " + r1 + " and " + r2);
+		else if (r == 0)
+			System.out.println("The equation has one root " + r1);
+		else
+			System.out.println("The equation has no real roots ");
+  }
+}
+
+3.2
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		int number1 = (int)(System.currentTimeMillis() % 10);
+	    int number2 = (int)(System.currentTimeMillis() / 10 % 10);
+	    int number3 = (int)(System.currentTimeMillis() /100 % 10);
+
+	    Scanner input = new Scanner(System.in);
+
+	    System.out.print("What is " + number1 + " + " + number2 + " + " + number3 + "? ");
+
+	    int answer = input.nextInt();
+
+	    System.out.println(number1 + " + " + number2 + " + " + number2 + " = " + answer + " is " + (number1 + number2 + number3 == answer));
+  }
+}
+
+3.3
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter a, b, c, d, e, f: ");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		double d = input.nextDouble();
+		double e = input.nextDouble();
+		double f = input.nextDouble();
+		
+		double condition = a * d - b * c;
+		double x = (e * d - b * f) / condition;
+		double y = (a * f - e * c) / condition;
+		
+		if (condition != 0)
+			System.out.println("x is " + x + " and y is " + y);
+		else
+			System.out.println("The equation has no solution");
+  }
+}
+
+3.4
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+
+		int number = (int)(Math.random() * 10) + 2 ;
+		
+		switch (number){
+		case 1:System.out.println(number + " is january");break;
+		case 2:System.out.println(number + " is February");break;
+		case 3:System.out.println(number + " is March");break;
+		case 4:System.out.println(number + " is April");break;
+		case 5:System.out.println(number + " is May");break;
+		case 6:System.out.println(number + " is June");break;
+		case 7:System.out.println(number + " is July");break;
+		case 8:System.out.println(number + " is August");break;
+		case 9:System.out.println(number + " is Septemper");break;
+		case 10:System.out.println(number + " is October");break;
+		case 11:System.out.println(number + " is November");break;
+		case 12:System.out.println(number + " is December ");break;
+		}
+  }
+}
+
+3.5  
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {	
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter today's day:");
+		int today = input.nextInt();
+		System.out.print("Enter the number of days elapsed since today:");
+		int time = input.nextInt();
+		
+		int f_t = (today + time) % 7;
+		String day = "";
+		String f_day = "";
+		switch (today){
+		case 1:day = "Monday";break;
+		case 2:day = "Tuesday";break;
+		case 3:day = "Wednesday";break;
+		case 4:day = "Thursday";break;
+		case 5:day = "Friday";break;
+		case 6:day = "Saturday";break;
+		case 0:day = "Sunday";break;
+		}
+		switch (f_t){
+		case 1:f_day = "Monday";break;
+		case 2:f_day = "Tuesday";break;
+		case 3:f_day = "Wednesday";break;
+		case 4:f_day = "Thursday";break;
+		case 5:f_day = "Friday";break;
+		case 6:f_day = "Saturday";break;
+		case 0:f_day = "Sunday";break;
+		}
+		System.out.print("Today is " + day + " and future day is " + f_day);
+	}
+}
+
+3.6 加个输入，英尺英寸换算
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {	
+		Scanner input = new Scanner(System.in);	
+		System.out.print("Enter weight in pounds: ");
+	    double weight = input.nextDouble();
+		    
+		System.out.print("Enter feet: ");
+		double height_ = input.nextDouble();
+		
+		System.out.print("Enter inches: ");
+		double height = input.nextDouble();
+		
+		final double KILOGRAMS_PER_POUND = 0.45359237;
+		final double METERS_PER_INCH = 0.0254; 
+		    
+		double weightInKilograms = weight * KILOGRAMS_PER_POUND; 
+		double heightInMeters = (height + height_ * 12) * METERS_PER_INCH; 
+		double bmi = weightInKilograms / (heightInMeters * heightInMeters);
+
+		System.out.println("BMI is " + bmi);
+		if (bmi < 18.5)
+			System.out.println("Underweight");
+		else if (bmi < 25)
+			System.out.println("Normal");
+		else if (bmi < 30)
+			System.out.println("Overweight");
+		else
+			System.out.println("Obese");
+	}
+}
+
+3.7  懒癌，加个判断的事情，不码了
+
+3.8
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {   
+		Scanner input = new Scanner(System.in);
+
+		System.out.print( "Enter 3 int: ");
+		int n1 = input.nextInt();
+		int n2 = input.nextInt();
+		int n3 = input.nextInt();
+		int t = 0;
+		
+		if(n1 > n2) {
+			t = n2;
+			n2 = n1;
+			n1 = t;
+		}
+		if(n1 > n3) {
+			t = n3;
+			n3 = n1;
+			n1 = t;
+		}
+		if(n2 > n3) {
+			t = n3;
+			n3 = n2;
+			n2 = t;
+		}
+		
+		System.out.print(n1 + " " + n2 + " " + n3);
+  }
+}
+
