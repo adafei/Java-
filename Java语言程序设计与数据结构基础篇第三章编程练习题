@@ -231,4 +231,43 @@ public class Exercises {
 
 3.10  程序中随机数*100
 
+3.11
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {   
+		Scanner input = new Scanner(System.in);
+
+		System.out.print( "Enter a month and a year: ");
+		int month = input.nextInt();
+		int year = input.nextInt();
+		String months = "";
+		int days = 0;
+		
+		switch(month) {
+		case 1:months = "january";days= 31;break;
+		case 2:months = "February";days= 28;break;
+		case 3:months = "March";days= 31;break;
+		case 4:months = "April";days= 30;break;
+		case 5:months = "May";days= 31;break;
+		case 6:months = "June";days= 30;break;
+		case 7:months = "July";days= 31;break;
+		case 8:months = "August";days= 31;break;
+		case 9:months = "Septemper";days= 30;break;
+		case 10:months = "October";days= 31;break;
+		case 11:months = "November";days= 30;break;
+		case 12:months = "December ";days= 31;;break;
+		}
+			
+		if((year % 4 ==0 && year % 100 !=0) || (year % 400 ==0)) {
+			days = 29;
+			System.out.print(months + " " + year + " has " + days + " days");
+		}
+		else {
+			System.out.print(months + " " + year + " has " + days + " days");
+		}
+	}
+}
+
+
 
