@@ -381,4 +381,141 @@ public class Exercises {
 	}
 }
 
-3.18
+3.18  套公式
+
+3.19
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入三角形边长:");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+	
+		if (a + b > c && a + c > b && c + b > a) {
+			double C = a + b + c;
+			System.out.print("周长：" + C);
+		}
+		else {
+			System.out.print("边长不合法" );
+		}
+	}
+}
+
+3.20  加个判断条件
+
+3.21
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter year:(e.g., 2012):");
+		int year = input.nextInt();
+		System.out.print("Enter month:1-12:");
+		int m = input.nextInt();
+		System.out.print("Enter the day of the month:1-31:");
+		int q = input.nextInt();
+		
+		if (m == 1 || m ==2) {
+			year = year - 1;
+			m = m + 12;
+		}
+		
+		int j = year / 100;
+		int k = year % 100;
+		int h = (q + 26 * (m + 1) / 10 + k + k / 4 + j / 4 + 5*j) % 7;
+		String p = "";
+		
+		switch (h) {
+			case 0:p = "Saturday";break;
+			case 1:p = "Sunday";break;
+			case 2:p = "Monday";break;
+			case 3:p = "Tuesday";break;
+			case 4:p = "Wednesday";break;
+			case 5:p = "Thursday";break;
+			case 6:p = "Friday";break;
+		}
+		System.out.print("Day of the week is " + p);
+	}
+}
+
+3.22
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a point with two coordinates:");
+		double x = input.nextDouble();
+		double y = input.nextDouble();
+		
+		double a = Math.pow(x, 2);
+		double b = Math.pow(y, 2);
+		double r = Math.pow(a + b, 0.5);
+		
+		if (r < 10 && r == 10 ) {
+			System.out.print("Point (" + x + ", " + y + ") is in the circle");
+		}
+		else {
+			System.out.print("Point (" + x + ", " + y + ") is not the circle");
+		}
+	}
+}
+
+3.23
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a point with two coordinates:");
+		double x = input.nextDouble();
+		double y = input.nextDouble();
+		
+		double a = Math.abs(x);
+		double b = Math.abs(y);
+		
+		if (a <= 5 && b <= (5.0/2) ) {
+			System.out.print("Point (" + x + ", " + y + ") is in the rectangle");
+		}
+		else{
+			System.out.print("Point (" + x + ", " + y + ") is not in the rectangle");
+		}
+	}
+}
+
+3.24  没思路，求大佬解决
+
+3.25 套公式即可
+
+3.26 && || ^ 条件判断
+
+3.27
+import java.util.Scanner;
+
+public class Exercises {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a point's x- and y-coordinates:");
+		double x = input.nextDouble();
+		double y = input.nextDouble();
+		double t = 100 / 200;
+		double a = 200 - x;
+		double b = 100 - y;
+		double c = b / a;
+		
+		if (c <= t && c >= 0) {
+			System.out.print("The point is in the triangle");
+		}
+		else{
+			System.out.print("The point is not in the triangle");
+		}
+	}
+}
+
+3.28
+
+
