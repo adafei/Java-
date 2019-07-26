@@ -518,4 +518,67 @@ public class Exercises {
 
 3.28
 
+import java.util.Scanner;
+
+public class Exercises {
+  public static void main(String args[]) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter r1抯 center x-, y-coordinates, width, and height: ");
+    double x1 = input.nextDouble();
+    double y1 = input.nextDouble();
+    double w1 = input.nextDouble();
+    double h1 = input.nextDouble();
+
+    System.out.print("Enter r2抯 center x-, y-coordinates, width, and height: ");
+    double x2 = input.nextDouble();
+    double y2 = input.nextDouble();
+    double w2 = input.nextDouble();
+    double h2 = input.nextDouble();
+    
+    double xDistance = x1 >= x2 ? x1 - x2 : x2 - x1;
+    double yDistance = y1 >= y2 ? y1 - y2 : y2 - y1;
+    
+    if (xDistance <= (w1 - w2) / 2 && yDistance <= (h1 - h2) / 2)
+      System.out.println("r2 is inside r1");
+    else if (xDistance <= (w1 + w2) / 2 && yDistance <= (h1 + h2) / 2)
+      System.out.println("r2 overlaps r1");
+    else
+      System.out.println("r2 does not overlap r1");
+  }
+}
+
+3.29
+import java.util.Scanner;
+
+public class Exercises {
+  public static void main(String args[]) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter circlel's center x-, y-coordi nates, and radius: ");
+    double x1 = input.nextDouble();
+    double y1 = input.nextDouble();
+    double r1 = input.nextDouble();
+
+    System.out.print("Enter circle2 's center x-, y-coordinates, and radius: ");
+    double x2 = input.nextDouble();
+    double y2 = input.nextDouble();
+    double r2 = input.nextDouble();
+    
+    double xDistance = x1 >= x2 ? x1 - x2 : x2 - x1;
+    double yDistance = y1 >= y2 ? y1 - y2 : y2 - y1;
+    double rDistance = Math.sqrt(xDistance * xDistance + yDistance * yDistance );
+    
+    if (rDistance <= r1 - r2 )
+      System.out.println("circle2 is inside circlel");
+    else if (rDistance <= r1 + r2)
+      System.out.println("circle2 overlaps ci rclel");
+    else
+      System.out.println("circle2 does not overlap circlel");
+  }
+}
+
+3.30
+
+
 
