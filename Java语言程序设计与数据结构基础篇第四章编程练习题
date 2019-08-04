@@ -13,4 +13,109 @@ public class Exercises{
 }
 
 
-4.2
+4.2  套公式
+
+4.3 
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		double x1 = 35.2270869 * Math.PI / 180, y1 = -80.8431267 * Math.PI / 180; // Charlotte
+		double x2 = 32.0835407 * Math.PI / 180, y2 = -81.0998342 * Math.PI / 180; // Savannah
+		double x3 = 28.5383355 * Math.PI / 180, y3 = -81.3792365 * Math.PI / 180; // Orlando
+		double x4 = 33.7489954 * Math.PI / 180, y4 = -84.3879824 * Math.PI / 180; // Atlanta
+		
+		double d1 = 6371.01 * Math.cos(Math.sin(x1) * Math.sin(x2) +
+				Math.cos(x1) * Math.cos(x2) * Math.cos(y1 - y2));
+
+		double d2 = 6371.01 * Math.cos(Math.sin(x3) * Math.sin(x2 ) +
+		        Math.cos(x3) * Math.cos(x2) * Math.cos(y3 - y2));
+
+		double d3 = 6371.01 * Math.cos(Math.sin(x3) * Math.sin(x4 ) +
+		        Math.cos(x3) * Math.cos(x4) * Math.cos(y3 - y4));
+
+		double d4 = 6371.01 * Math.cos(Math.sin(x1) * Math.sin(x4 ) +
+		        Math.cos(x1) * Math.cos(x4) * Math.cos(y1 - y4));
+
+		double d5 = 6371.01 * Math.cos(Math.sin(x4) * Math.sin(x2 ) +
+		        Math.cos(x4) * Math.cos(x2) * Math.cos(y4 - y2));
+
+		double s = (d1 + d4 + d5) / 2;
+		double area1 = Math.sqrt(s * (s - d1) * (s - d4) * (s - d5));
+
+		s = (d2 + d3 + d5) / 2;
+		double area2 = Math.sqrt(s * (s - d2) * (s - d3) * (s - d5));
+
+		System.out.println("The area is " + (area1 + area2) + " square kilometers");
+	}
+}
+
+4.4 套公式
+4.5 同上
+4.6
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+	    double r = 40;
+	    
+	    System.out.println("Three random points are ");
+	    
+	    double angle = Math.random() * 360;
+	    double x = r * Math.cos(angle * Math.PI / 180);
+	    double y = r * Math.sin(angle * Math.PI / 180);
+	    System.out.println("(" + x + ", " + y + ")");
+
+	    angle = Math.random() * 360;
+	    x = r * Math.cos(angle * Math.PI / 180);
+	    y = r * Math.sin(angle * Math.PI / 180);
+	    System.out.println("(" + x + ", " + y + ")");
+
+	    angle = Math.random() * 360;
+	    x = r * Math.cos(angle * Math.PI / 180);
+	    y = r * Math.sin(angle * Math.PI / 180);
+	    System.out.println("(" + x + ", " + y + ")");
+	}
+}
+
+4.7
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	    System.out.print("Enter the radius of the bounding circle: ");
+	    double radius = input.nextDouble();
+	    
+	    System.out.println("The coordinates of five points on the pentagon are");
+
+	    double angle = Math.PI / 2 - 2 * Math.PI / 5;
+	    double x = radius * Math.cos(angle);
+	    double y = radius * Math.sin(angle);
+	    System.out.printf("(%.2f, %.2f)\n", x, y);
+	    
+	    angle += 2 * Math.PI / 5;
+	    x = radius * Math.cos(angle);
+	    y = radius * Math.sin(angle);
+	    System.out.printf("(%.2f, %.2f)\n", x, y);
+
+	    angle += 2 * Math.PI / 5;
+	    x = radius * Math.cos(angle);
+	    y = radius * Math.sin(angle);
+	    System.out.printf("(%.2f, %.2f)\n", x, y);
+
+	    angle += 2 * Math.PI / 5;
+	    x = radius * Math.cos(angle);
+	    y = radius * Math.sin(angle);
+	    System.out.printf("(%.2f, %.2f)\n", x, y);
+
+	    angle += 2 * Math.PI / 5;
+	    x = radius * Math.cos(angle);
+	    y = radius * Math.sin(angle);
+	    System.out.printf("(%.2f, %.2f)\n", x, y);
+	}
+}
+
+4.8
+
+
