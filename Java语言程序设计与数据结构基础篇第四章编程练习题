@@ -336,7 +336,196 @@ public class Exercises{
 	}
 }
 
-4.15
+4.15  用Switch
+
+4.16
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+		char a = (char)(65 + Math.random() * 26);
+		System.out.print(a);
+	}
+}
+
+4.17
+
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter a year: ");
+	    int year = input.nextInt();
+
+	    System.out.print("Enter a month (first three letters with the first letter in uppercase): ");
+	    String month = input.next();
+	    
+	    if (month.equals("Jan") || month.equals("Mar") || month.equals("May")
+	        || month.equals("Jul") || month.equals("Aug") || month.equals("Oct") || month.equals("Dec"))
+	      System.out.print(month + " " + year + " has 31 days");
+	    else if (month.equals("Apr") || month.equals("Jun") || month.equals("Sep") || month.equals("Nov"))
+	      System.out.print(month + " " + year + " has 30 days");
+	    else if (month.equals("Feb"))
+	      if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+	        System.out.print(month + " " + year + " has 29 days");
+	      else
+	        System.out.print(month + " " + year + " has 28 days");
+	    else
+	      System.out.print(month + " is not a correct month name ");
+	}
+}
+
+4.18
+import java.util.Scanner;
+
+public class Exercise{
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter two characters: ");
+    String s = input.nextLine();
+    
+    if (s.charAt(0) == 'M')
+      System.out.print("Mathematics ");
+    else if (s.charAt(0) == 'C')
+      System.out.print("Computer Science ");
+    else if (s.charAt(1) == 'I')
+      System.out.print("Information Technology ");
+    else 
+    {
+      System.out.println("Input major code");
+      System.exit(1);
+    }
+
+    if (s.charAt(1) == '1')
+      System.out.println("Freshman");
+    else if (s.charAt(1) == '2')
+      System.out.println("Sophomore");
+    else if (s.charAt(1) == '3')
+      System.out.println("Junior");
+    else if (s.charAt(1) == '4')
+      System.out.println("Senior");
+    else 
+    {
+      System.out.println("Input status code");
+      System.exit(2);
+    }
+  }
+}
+
+4.19 
+import java.util.Scanner;
+
+public class Exercise{
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print(
+      "Enter the first 9 digits of an ISBN as integer: ");
+    String number = input.nextLine();
+
+    if (number.length() != 9) {
+      System.out.println("You need to enter exactly 9 digits");
+      System.exit(1);
+    }
+      
+    int checksum = ((number.charAt(0) - '0') * 1 +
+        (number.charAt(1) - '0') * 2 +
+        (number.charAt(2) - '0') * 3 +
+        (number.charAt(3) - '0') * 4 +
+        (number.charAt(4) - '0') * 5 +
+        (number.charAt(5) - '0') * 6 +
+        (number.charAt(6) - '0') * 7 +
+        (number.charAt(7) - '0') * 8 +
+        (number.charAt(8) - '0') * 9) % 11;
+      
+    System.out.print("The ISBN-10 number is " + number);
+
+    if (checksum == 10)
+      System.out.println("X");
+    else
+      System.out.println(checksum);
+  }
+}
+
+
+4.20 用 length 和 charAt 方法
+
+4.21
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter a SSN:: ");
+	    String ssn = input.nextLine();
+	    
+	    if (ssn.length() == 11 && ssn.charAt(3) == '-' && ssn.charAt(6) == '-') {
+	    	System.out.print(ssn + " is a valid social security number");
+	    }
+	    else {
+	    	System.out.print(ssn + " is an invalid social security number");
+	    }
+
+4.22
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter string s1: ");
+	    String s1 = input.nextLine();
+	    System.out.print("Enter string s2: ");
+	    String s2 = input.nextLine();
+	    
+	    if (s1.indexOf(s2) == -1) {
+	    	System.out.print(s2 + " is not a substring of " + s1);
+	    }
+	    else {
+	    	System.out.print(s2 + " is a substring of " + s1);
+	    }
+	}
+}
+
+4.23 略
+
+4.24
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter the first city: ");
+	    String s1 = input.nextLine();
+	    System.out.print("Enter the second city: ");
+	    String s2 = input.nextLine();
+	    System.out.print("Enter the third city: ");
+	    String s3 = input.nextLine();
+	    String temp = "";
+	    
+	    if (s1.compareTo(s2) > 0){
+	    	temp = s2;
+	    	s2 = s1;
+	    	s1 = temp;
+	    }
+	    else if (s2.compareTo(s3) > 0) {
+	    	temp = s3;
+	    	s3 = s2;
+	    	s2 = temp;
+	    }
+	    if (s1.compareTo(s2) > 0){
+	    	temp = s2;
+	    	s2 = s1;
+	    	s1 = temp;
+	    }
+	    System.out.print("The three cities in alphabetical order are " + s1 + " " + s2 + " " + s3);
+	}
+}
+4.25
+
+
+
+
 
 
 
