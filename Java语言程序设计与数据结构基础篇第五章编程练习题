@@ -31,4 +31,106 @@ public class Exercises{
 		}
   }
 }
-5.2
+5.2 减法变加法，循环次数改为10，随机数*15，轻微改动就可以了
+
+5.3
+import java.util.Scanner;
+public class Exercises{
+	public static void main(String[] argds) {
+		System.out.println("千克                    磅");
+		
+		for(int i = 0; i < 200;i++){
+			if (i % 2 ==1)
+				System.out.println(i + "         " + i * 2.2);
+		}
+	}
+}
+
+5.4 5.5 5.6  同上
+
+5.7 for循环分别计算两次
+
+5.8
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入学生人数：");
+		int num = input.nextInt();
+		System.out.print("请输入学生名称：");
+		String name = input.next();
+		System.out.print("请输入学生总分：");
+		int score = input.nextInt();
+		
+		for(int i = 0; i < num - 1;i++){
+			System.out.print("请输入学生名称：");
+			String name1 = input.next();
+			System.out.print("请输入学生总分：");
+			int score1 = input.nextInt();
+			
+			if (score1 > score) {
+				score = score1;
+				name = name1;
+			}
+		}
+		
+		System.out.print("最高分是 " + name + " 总分 ：" +  score);
+	}
+}
+
+5.9 
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入学生人数：");
+		int num = input.nextInt();
+		System.out.print("请输入学生名称：");
+		String name = input.next();
+		System.out.print("请输入学生总分：");
+		int score = input.nextInt();
+		System.out.print("请输入学生名称：");
+		String name1 = input.next();
+		System.out.print("请输入学生总分：");
+		int score1 = input.nextInt();
+		
+		if (score < score1) {
+			String n_temp = name;
+			int s_temp = score;
+			name = name1;
+			score = score1;
+			name1 = n_temp;
+			score1 = s_temp;
+			}
+		
+		for(int i = 0; i < num - 2;i++){
+			
+			System.out.print("请输入学生名称：");
+			String name2 = input.next();
+			System.out.print("请输入学生总分：");
+			int score2 = input.nextInt();
+
+			if (score2 > score) {
+				name1 = name;
+				score1 = score;
+				score = score2;
+				name = name2;
+			}
+			else if (score2 > score1 ) {
+				name1 = name2;
+				score1 = score2;
+			}
+		}
+		
+		System.out.print("第一名是 " + name + " 总分 ：" +  score);
+		System.out.print("第二名是 " + name1 + " 总分 ：" +  score1);
+	}
+}
+
+5.10
+
+
+
+
