@@ -130,7 +130,251 @@ public class Exercises{
 }
 
 5.10
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int count = 0;
+		for(int i = 100; i < 1000;i++) {
+			if (i % 5 == 0 && i % 6 == 0) {
+				++count;
+				if(count % 10 == 0) {
+					System.out.print(i + " \n");
+				}
+				else {
+					System.out.print(i + " ");
+				}
+			}
+		}
+	}
+}
+
+5.11
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+//		Scanner input = new Scanner(System.in);
+		int count = 0;
+		for(int i = 100; i < 1000;i++) {
+			if (i % 5 == 0 ^ i % 6 == 0) {
+				++count;
+				if(count % 10 == 0) {
+					System.out.print(i + " \n");
+				}
+				else {
+					System.out.print(i + " ");
+				}
+			}
+		}
+	}
+}
+
+5.12
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int n = 1;
+		while(n * n < 12000) {
+			++n;
+		}
+		System.out.print(n);
+	}
+}
+
+5.13
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int n = 1;
+		while(n * n * n < 12000) {
+			++n;
+		}
+		System.out.print(n-1);
+	}
+}
+
+5.14
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+
+	    System.out.print("Enter first integer: ");
+	    int n1 = input.nextInt();
+	    System.out.print("Enter second integer: ");
+	    int n2 = input.nextInt();
+
+	    int d;
+	    if (n1 < n2) {
+	    	d = n1;
+	    }
+	    else {
+	    	d = n2;
+	    }
+	   while(true) {
+		   if(n1 % d ==0 && n2 %d ==0) {
+			   System.out.println("The greatest common divisor for " + n1 +" and " + n2 + " is " + d);
+			   break;
+		   }
+		   --d;
+	   }
+	}
+}
+5.15
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int count = 0;
+		for(char i = '!';i <= '~';i++ ) {
+			++count;
+			System.out.print(i + " ");
+			if(count % 10 ==0) {
+				System.out.println();
+			}
+		}
+	   
+	}
+}
+5.16
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+		System.out.println("Enter a integer:");
+		int n = input.nextInt();
+		int i = 2;
+		while(i < n) {
+			if(n %i ==0) {
+				n = n / i;
+				System.out.println(i);
+			}
+			else {
+				i++;
+			}
+		}
+	}
+}
+
+5.17
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("enter a number from 1 to 15：");
+	    int n = input.nextInt();
+	    for (int i = 1; i <= n; i++) {
+	    	//打印空格
+	    	for (int j = n - i; j >= 1; j--) {
+	    		System.out.print(" " + " ");
+	    	}
+	    	//打印数字
+	    	for (int j = i; j >= 1; j--) {
+	    		System.out.print(" " + j);
+	    	}
+	    	for (int j = 2; j < i + 1; j++) {
+	    		System.out.print(" " + j);
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
+
+5.18
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.println("图案1");
+	    for (int i = 1; i <= 6; i++) {
+	    	for (int j = 1; j <= i; j++) {
+	    		System.out.print(j + " ");
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
+
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.println("图案2");
+	    for (int i = 0; i <= 6; i++) {
+	    	for (int j = 1; j <= 6-i; j++) {
+	    		System.out.print(j + " ");
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
 
 
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.println("图案3");
+	    for (int i = 1; i <= 6; i++) {
+	    	for(int k = 6 - i;k >= 1;k--) {
+	    		System.out.print(" " + " ");
+	    	}
+	    	for(int j = i; j >= 1; j--) {
+	    		System.out.print(j + " ");
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
 
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.println("图案4");
+	    for (int i = 0; i <= 6; i++) {
+	    	for(int k = 1;k <= i;k++) {
+	    		System.out.print(" " + " ");
+	    	}
+	    	for(int j = 1; j <= 6 - i; j++) {
+	    		System.out.print(j + " ");
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
+
+
+5.19
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int num = 0;
+		for (int i = 0; i <= 7; i++) {
+	    	for(int k = 1;k <= 7-i;k++) {
+	    		System.out.print("    ");
+	    	}
+	    	for(int j = 0; j <= i; j++) {
+	    		num = (int)Math.pow(2, j);
+	    		System.out.printf("%4d",num);
+	    	}
+	    	for(int a = i-1; a >= 0; a--) {
+	    		num = (int)Math.pow(2, a);
+	    		System.out.printf("%4d",num);
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
+
+5.20
 
