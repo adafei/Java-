@@ -154,7 +154,6 @@ import java.util.Scanner;
 
 public class Exercises{
 	public static void main(String[] argds) {
-//		Scanner input = new Scanner(System.in);
 		int count = 0;
 		for(int i = 100; i < 1000;i++) {
 			if (i % 5 == 0 ^ i % 6 == 0) {
@@ -378,3 +377,149 @@ public class Exercises{
 
 5.20
 
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int count = 0;
+		int num = 2;
+		boolean isprime = true;
+		while(num <= 1000) {
+			isprime = true;
+			for(int i = 2;i <= num / 2;i++) {
+				if(num % i ==0) {
+					isprime = false;
+					break;
+				}
+			}
+			if(isprime) {
+				System.out.print(num + " ");
+				count++;
+				if(count % 8 ==0) {
+					System.out.println();
+					count++;
+				}
+			}
+			num++;
+			}
+	}
+}
+
+5.21
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Loan Amount:");
+		double Loan_Amount = input.nextDouble();
+		System.out.print("Number of Years:");
+		int years = input.nextInt();
+		System.out.printf("%-20s","Interest Rate");
+		System.out.printf("%-20s","Monthly Payment");
+		System.out.printf("%-20s","Total Payment");
+		System.out.println();
+		
+		for(double Interest_Rate = 5.0; Interest_Rate <= 8.0;Interest_Rate += 1.0/8) {
+			double m_Rate = Interest_Rate / 1200;
+			double Monthly_Payment = Loan_Amount * m_Rate / (1 - 1 / Math.pow((1 + m_Rate),years * 12) );
+			double Total_Payment = Monthly_Payment * years *12;
+			System.out.printf("%5.3f%c",Interest_Rate,'%');
+			System.out.print("              ");
+			System.out.printf("%-20.2f",Monthly_Payment);
+			System.out.printf("%-20.2f",Total_Payment);
+			System.out.println();
+		}
+	}
+}
+
+5.22
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Loan Amount:");
+		double Loan_Amount = input.nextDouble();
+		System.out.print("Number of Years:");
+		int years = input.nextInt();
+		System.out.print("Annual Interest Rate:");
+		int rate = input.nextInt();
+		
+		System.out.println(" ");
+		
+		double m_Rate = (double)rate / 1200;
+		double Monthly_Payment = Loan_Amount * m_Rate / (1 - 1 / Math.pow((1 + m_Rate),years * 12) );
+		double Total_Payment = Monthly_Payment * years *12;
+		System.out.printf("Monthly Payment:" + "%.2f\n",Monthly_Payment);
+		System.out.printf("Total Payment:" + "%.2f\n",Total_Payment);
+		System.out.println(" ");
+		System.out.printf("%-20s %-20s %-20s %-20s\n","Payment#","Interest","Principal","Balance");
+		
+		for(int Payment = 1; Payment <= years * 12;Payment++) {
+			double Interest = m_Rate * Loan_Amount;
+			double Principal = Monthly_Payment - Interest;
+			Loan_Amount = Loan_Amount - Principal;
+			System.out.printf("%-20d %-20.2f %-20.2f %-20.2f\n",Payment,Interest,Principal,Loan_Amount);
+		}
+	}
+}
+
+5.23
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		double sum = 0;
+		for(double n = 50000; n >= 1;n--) {
+			sum = sum + 1.0 / n;
+		}
+		System.out.print(sum);
+	}
+}
+
+5.24
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		double sum = 0;
+		for(double i = 1; i < 100;i +=2) {
+			double num = i + 2;
+			sum = sum + i / num;
+		}
+		System.out.print(sum);
+	}
+}
+
+5.25
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		double sum = 0;
+		for(double i = 1; i <= 1000000;i++) {
+			double n1 = Math.pow(-1, i+1);
+			double n2 = 2 * i - 1;
+			sum = sum + n1 / n2;
+		}
+		System.out.print(4 * sum);
+	}
+}
+
+5.26
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		double e = 1;
+		double item = 1;
+		for(double i = 1; i <= 10000;i++) {
+			item = item / i;
+			e += item;
+		}
+		System.out.print(e);
+	}
+}
+
+5.27
