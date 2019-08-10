@@ -523,3 +523,198 @@ public class Exercises{
 }
 
 5.27
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		double e = 1;
+		double item = 1;
+		for(double i = 1; i <= 10000;i++) {
+			item = item / i;
+			e += item;
+		}
+		System.out.print(e);
+	}
+}
+
+5.28
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("enter a year:");
+		int year = input.nextInt();
+		System.out.print("enter the first day of the year:");
+		int firstday = input.nextInt();
+		int days = 0;
+		for(int month = 1;month <=12;month++) {
+			switch (month) {
+			case 1: System.out.print("January 1 is, " + year + " is ");days = 31;break;
+			case 2: System.out.print("February 1 is, " + year + " is ");days = 31;
+					if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+		                days = 29;
+					}
+					else {
+						days = 28;
+					}
+					break;
+			case 3: System.out.print("March 1 is, " + year + " is ");days = 31;break;
+			case 4: System.out.print("April 1 is, " + year + " is ");days = 30;break;
+			case 5: System.out.print("May 1 is, " + year + " is ");days = 31;break;
+			case 6: System.out.print("June 1 is, " + year + " is ");days = 30;break;
+			case 7: System.out.print("July 1 is, " + year + " is ");days = 31;break;
+			case 8: System.out.print("Augst 1 is, " + year + " is ");days = 31;break;
+			case 9: System.out.print("September 1 is, " + year + " is ");days = 30;break;
+			case 10: System.out.print("October 1 is, " + year + " is ");days = 31;break;
+			case 11: System.out.print("November 1 is, " + year + " is ");days = 30;break;
+			case 12: System.out.print("December 1 is, " + year + " is ");days = 31;break;
+			}
+		
+			switch(firstday) {
+	        case 0: System.out.println("Sunday"); break;
+	        case 1: System.out.println("Monday"); break;
+	        case 2: System.out.println("Tuesday"); break;
+	        case 3: System.out.println("Wednesday"); break;
+	        case 4: System.out.println("Thursday"); break;
+	        case 5: System.out.println("Friday"); break;
+	        case 6: System.out.println("Saturday"); break;
+			}
+			firstday = (firstday + days) % 7;
+		}
+	}
+}
+
+5.29
+
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("enter a year:");
+		int year = input.nextInt();
+		System.out.print("enter the first day of the year:");
+		int firstday = input.nextInt();
+		int days = 0;
+		for(int month = 1;month <=12;month++) {
+			
+			System.out.print("        ");
+			switch (month) {
+			case 1: System.out.println("January " + year);days = 31;break;
+			case 2: System.out.println("February " + year);days = 31;
+					if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+		                days = 29;
+					}
+					else {
+						days = 28;
+					}
+					break;
+			case 3: System.out.println("March " + year);days = 31;break;
+			case 4: System.out.println("April " + year);days = 30;break;
+			case 5: System.out.println("May " + year);days = 31;break;
+			case 6: System.out.println("June " + year);days = 30;break;
+			case 7: System.out.println("July " + year);days = 31;break;
+			case 8: System.out.println("Augst " + year);days = 31;break;
+			case 9: System.out.println("September " + year);days = 30;break;
+			case 10: System.out.println("October " + year);days = 31;break;
+			case 11: System.out.println("November " + year);days = 30;break;
+			case 12: System.out.println("December " + year);days = 31;break;
+			}
+			
+			System.out.println("-----------------------------");
+			System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
+			
+			for(int i = 0;i < firstday;i++) {
+				System.out.print("    ");
+			}
+			
+			for(int i = 1;i <= days;i++) {
+				if(i < 10)
+					System.out.print("   " + i);
+				else
+					System.out	.print("  " + i);
+				
+				 if ((i + firstday) % 7 == 0)
+					 System.out.println();
+			}
+			
+			System.out.println();
+			System.out.println();
+			
+			firstday = (firstday + days) % 7;
+		}
+	}
+}
+
+5.30
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("enter the number of dollar:");
+		double money = input.nextInt();
+		System.out.print("enter interest rate:");
+		double rate = input.nextInt();
+		System.out.print("enter a month:");
+		int month = input.nextInt();
+		double m_rate = rate / 1200;
+		double sum = money * (1 + m_rate);
+		
+		for(int i = 1;i < month;i++){
+			sum = (sum + money) * (1 + m_rate);
+		}
+		System.out.print(sum);
+	}
+}
+
+5.31 同上
+
+5.32 循环至两位数不等即可
+
+5.33
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+//		Scanner input = new Scanner(System.in);
+		
+		for(int i = 6;i <= 10000;i++){
+			int sum = 0;
+			for(int a = 1;a < i;a++) {
+				if(i % a == 0) {
+					sum = sum + a;
+				}
+			}
+			if (i == sum) {
+				System.out.println(i);
+			}
+		}
+		
+	}
+}
+
+5.34 加入循环判定胜利次数
+
+5.35
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		double sum = 0;
+		for(double i = 1;i <= 624;i++){
+			double num = 1 / (Math.sqrt(i) + Math.sqrt(i + 1));
+			sum = sum +num;
+		}
+		System.out.println(sum);
+	}
+}
+
+5.36  数字前后套双循环计算打印
+
+5.37
+
+
+
