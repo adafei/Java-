@@ -715,6 +715,226 @@ public class Exercises{
 5.36  数字前后套双循环计算打印
 
 5.37
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入一个十进制整数：");
+		int num10 = input.nextInt();
+		String num2 = "";
+		int temp = num10;
+		while(temp!=0) {
+			num2 = temp % 2 + num2;
+			temp = temp / 2;
+		}
+		System.out.println(num10 + "的二进制数是" + num2);
+	}
+}
+
+5.38
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入一个十进制整数：");
+		int num10 = input.nextInt();
+		String num8 = "";
+		int temp = num10;
+		while(temp!=0) {
+			num8 = temp % 8 + num8;
+			temp = temp / 8;
+		}
+		System.out.println(num10 + "的八进制数是" + num8);
+	}
+}
+
+5.39
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		double money = (30000 - (5000 * 0.08 + 5000 * 0.1 + 10000)) / 1.12;
+		System.out.println("最小销售额是" + (money + 10000));
+	}
+}
+
+5.40 随机数%2 循环计数
+
+5.41
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("输入数字: ");
+		int num = input.nextInt();
+	    if (num == 0) {
+	        System.exit(1);
+	      } 
+		int max = num;
+		int count = 1;
+		
+		while(num != 0) {
+			System.out.print("输入数字: ");
+			num = input.nextInt();
+			if(num > max) {
+				max = num;
+				count = 1;
+			}
+			else if(num == max) {
+				count++;
+			}
+		}
+		System.out.println("最大数是" + max);
+		System.out.println("最大数有" + count + "个");
+	}
+}
+
+5.42 ...
+
+5.43
+
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		int count = 0;
+	    for (int i = 1; i < 8; i++) 
+	      for (int j = i + 1; j < 8; j++) {
+	        System.out.println(i + " " + j);
+	        count++;
+	      }
+	    
+	    System.out.println("The total number of all combinations is " + count);
+	}
+}
+
+5.44
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter an integer: ");
+	    int value = input.nextInt();
+	    
+	    System.out.print("The 16 bits are ");
+	    int mask = 1;
+	    for (int i = 15; i >= 0; i--) {
+	      int temp = value >> i;
+	      int bit = temp & mask;
+	      System.out.print(bit);
+	    }
+	}
+}
+5.45 套公式
+
+5.46
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter an integer: ");
+	    String s = input.next();
+	    int i = s.length();
+	    
+	    for(int a = i-1;a >=0;a--) {
+	      System.out.print(s.charAt(a));
+	    }
+	}
+}
+
+5.47
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter the first 12 digits of an ISBN-13 as a string:");
+	    String s = input.next();
+	    int sum = 0;
+	    if (s.length() != 12) {
+	    	 System.out.print( s + " is an invalid input");
+	    	 System.exit(0);
+	    }
+	    
+	    for(int i = 0;i < s.length();i++) {
+	    	if(i % 2 == 1) {
+	    		sum = sum + 3 * (s.charAt(i) - '0');
+	    	}
+	    	else if(i % 2 ==0) {
+	    		sum = sum + (s.charAt(i) - '0');
+	    	}
+	    }
+	    
+	    int num13 = 10 - sum % 10;
+	    if (num13 == 10){
+	    	System.out.print("The ISBN-13 number is " + s + "0");
+	    }
+	    else {
+	    	System.out.print("The ISBN-13 number is " + s + num13);
+	    }
+	}
+}
+
+5.48
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter a string:");
+	    String s = input.next();
+	    
+	    for(int i = 0;i < s.length();i++) {
+	    	if(i % 2 == 0) {
+	    		System.out.print(s.charAt(i));
+	    	}
+	    }
+	}
+}
+
+5.49 循环判断元音计数
+
+5.50 循环判断字母计数
+
+5.51
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+	    Scanner input = new Scanner(System.in);
+	    System.out.print("Enter first string:");
+	    String s1 = input.next();
+	    System.out.print("Enter second string:");
+	    String s2 = input.next();
+	    String temp = "";
+	    
+	    for(int i = 0;i < s1.length();i++) {
+	    	if(s1.charAt(i) == s2.charAt(i)) {
+	    		temp += s1.charAt(i);
+	    	}
+	    	else
+	    		break;
+	    }
+	    if(temp.length() > 0) {
+		    System.out.print(temp);
+	    }
+	    else {
+	    	System.out.print("no common prefix");
+	    }
+	}
+}
+
+
+
+
+
 
 
 
