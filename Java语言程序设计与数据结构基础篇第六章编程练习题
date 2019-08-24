@@ -163,4 +163,31 @@ public class Exercises{
 	}
 }
 
-6.7
+6.7 套公式循环输出
+6.8 同上
+6.9 同上
+6.10
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		int count = 0;
+		for(int i = 2;i <= 10000;i++) {
+			if(isPrime(i)) {
+				count++;
+			}
+		}
+		System.out.print("素数数量：" + count);
+	}
+	
+	public static boolean isPrime(int number) {
+		for (int divisor = 2; divisor <= number / 2; divisor++) {
+			if (number % divisor == 0) { // If true, number is not prime
+				return false; // number is not a prime
+			}
+		}
+		return true; // number is prime
+	}
+}
+
+6.11
