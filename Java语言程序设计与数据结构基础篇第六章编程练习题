@@ -1,0 +1,166 @@
+6.1
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		for(int i = 1;i <= 100;i++) {
+			if(i % 10 == 0) {
+				System.out.printf("%7d\n",getPentagonalNumber(i));
+			}
+			else {
+				System.out.printf("%7d",getPentagonalNumber(i));
+			}
+		}
+		
+	}
+
+	public static int getPentagonalNumber(int n) {
+		n = n * ( 3 * n - 1) / 2;
+		return n;
+		
+		}
+	}
+
+6.2
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number:");
+		int i = input.nextInt();
+		System.out.print(sumDigits(i));
+	}
+
+	public static int sumDigits(long n) {
+		int sum = 0;
+		do {
+			sum = sum + (int)n % 10;
+			n = n/10;
+		}while(n != 0);
+		return sum;	
+		
+		}
+	}
+    
+6.3
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number:");
+		int i = input.nextInt();
+		
+		if(isPalindrome(i)) {
+			System.out.print("isPalindrome");
+		}
+		else {
+			System.out.print(" not isPalindrome");
+		}
+	}
+
+	public static boolean isPalindrome(int number) {
+		if(number == reverse(number)) 
+			return true;
+		else
+			return false;
+	}
+
+	public static int reverse(int number) {
+		int num = 0;
+		while(number != 0) {
+			num = num * 10 + number % 10;
+			number = number /10;
+		}
+		
+		return num;
+	}
+}
+
+6.4
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number:");
+		int i = input.nextInt();
+		
+		System.out.print(reverse(i));
+	}
+
+
+	public static int reverse(int number) {
+		int num = 0;
+		while(number != 0) {
+			num = num * 10 + number % 10;
+			number = number /10;
+		}
+		
+		return num;
+	}
+}
+
+6.5
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter three number:");
+		double num1 = input.nextDouble();
+		double num2 = input.nextDouble();
+		double num3 = input.nextDouble();
+		
+		displaySortedNumbers(num1,num2,num3);
+		
+	}
+
+
+	public static void displaySortedNumbers(double num1, double num2, double num3){
+		double temp = 0;
+		if(num1 > num2) {
+			temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+		if(num2 > num3) {
+			temp = num2;
+			num2 = num3;
+			num3 = temp;
+		}
+		if(num1 > num2) {
+			temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+		System.out.println("The sorted numbers are " + num1 + " " + num2 + " " + num3);
+	}
+}
+
+6.6
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number:");
+		int num = input.nextInt();
+		displayPattern(num);
+	}
+
+	public static void displayPattern(int n){
+		for(int i = 1;i <= n;i++) {
+			for(int k = 1;k <= n-i;k++) {
+				System.out.print("    ");
+			}
+			for(int j = i;j > 0;j--) {
+				System.out.printf("%4d",j);
+			}
+			System.out.println();
+		}
+	}
+}
+
+6.7
