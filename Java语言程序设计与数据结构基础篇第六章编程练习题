@@ -190,4 +190,57 @@ public class Exercises{
 	}
 }
 
-6.11
+6.11 套用5.39
+
+6.12
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		printChars('1','z',10);
+	}
+	
+	public static void printChars(char ch1, char ch2, int numberPerLine){
+		int count = 1;
+		for(char i = ch1;i <= ch2;i++) {
+			if(count % numberPerLine == 0) {
+				System.out.printf("%-2c\n",i);
+			}
+			else {
+				System.out.printf("%-2c",i);
+			}
+			count++;
+		}
+	}
+}
+
+6.13
+import java.util.Scanner;
+
+public class Exercises{
+	public static void main(String[] argds) {
+		printmi(20);
+	}
+	
+	public static void printmi(double i){
+		System.out.println("i     m(i)     ");
+		System.out.println("----------------");
+		for(int a = 1;a <= i;a++) {
+			double m = 0;
+			System.out.printf("%-6d",a);
+			for(double b = 1;b <= a;b++) {
+				 m += b / (b + 1);
+			}
+			System.out.printf("%-10.4f\n",m);
+		}
+	}
+}
+
+6.14 套公式同上
+6.15 见清单3-5
+6.16 略
+6.17 略
+6.18
+
+
+
