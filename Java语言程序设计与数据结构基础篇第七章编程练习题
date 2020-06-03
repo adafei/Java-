@@ -1,1 +1,119 @@
+7.1
+import java.util.Scanner;
 
+class test {
+    public static void main(String[] args) {
+        Scanner input =new Scanner(System.in);
+        System.out.println("Enter the number of students:");
+        int index = input.nextInt();
+        int[] num = new int[index];
+        int max = 0;
+        
+        System.out.println("Enter 4 scores:");
+        
+        for (int i = 0; i < index; i++) {
+            num[i] = input.nextInt();
+            if (num[i] > max){
+            max = num[i];
+            }
+        }
+        
+        for (int i = 0; i <num.length ; i++) {
+            if (num[i] >= max -10){
+                System.out.println("Student " + i + " score " + num[i] + " grade is A");
+            }else if (num[i] >= max - 20){
+                System.out.println("Student " + i + " score " + num[i] + " grade is B");
+            }else if (num[i] >= max - 30){
+                System.out.println("Student " + i + " score " + num[i] + " grade is C");
+            }else if (num[i] >= max - 40){
+                System.out.println("Student " + i + " score " + num[i] + " grade is D");
+            }else
+                System.out.println("Student " + i + " score " + num[i] + " grade is F");
+        }
+    }
+
+}
+
+7.2
+class test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] a = new int[10];
+        System.out.print("请输入10个整数:");
+        for (int i = 0; i < a.length; i++) {
+            a[i] = input.nextInt();
+        }
+
+        for (int i = a.length - 1; i >= 0 ; i--) {
+            System.out.print(a[i] + " ");
+        }
+
+    }
+
+}
+
+7.3
+
+import java.util.Scanner;
+
+class test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] a = new int[100];
+        System.out.print("Enter the integers between 1 and 100:");
+        
+        int num = input.nextInt();
+        while (num != 0){
+            if (num <= 100 && num >=0)
+                a[num - 1]++;
+            num = input.nextInt();
+        }
+
+        for (int i = 0; i < a.length ; i++) {
+            if (a[i] > 0){
+                System.out.println((i+1) + " occurs " + a[i] + (a[i] > 1 ? " times" : " time"));
+            }
+        }
+
+    }
+
+}
+
+7.4
+import java.util.Scanner;
+
+class test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] a = new int[101];
+        System.out.print("请输入分数:");
+
+        int sum = 0;
+        int count = 0;
+
+        int num = input.nextInt();
+        while (num >= 0){
+            if (num <= 100 && num >=0) {
+                a[num]++;
+                sum = sum + num;
+                count++;
+            }
+            num = input.nextInt();
+        }
+
+        int average = sum / count;
+        int below = 0;
+        int above = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (i < average && a[i] >= 1){
+                below++;
+            }else if ( i >= average && a[i] >= 1){
+                above++;
+            }
+        }
+        System.out.println("平均分是:" + average + ",大于平均分的有"+ above +
+                "个，低于平均分的有" + below + "个。");
+    }
+}
+
+7.5
