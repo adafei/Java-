@@ -355,12 +355,347 @@ public class Exercises{
 	}
 }
 
-6.22 看不懂题目 GG
-6.23 略
+6.22 看不懂题目 放上标准答案
+public class Exercise06_22 {
+  // Main method
+  public static void main(String[] args) {
+    System.out.print("Enter a positive number: ");
+    java.util.Scanner input = new java.util.Scanner(System.in);
+    double number = input.nextDouble();
+    
+    System.out.println(
+      "The square root for " + number + " is " + SquareRoot.sqrt(number));
+  }
+}
+
+// This class contains sqrt method
+class SquareRoot {
+  // Find the square root of the value
+  public static double sqrt(double num) {
+    double nextGuess = 1.0;
+    double lastGuess;
+
+    do {
+      lastGuess = nextGuess;
+      nextGuess = (lastGuess + (num / lastGuess)) * 0.5;
+    } 
+    while (Math.abs(nextGuess - lastGuess) >= 0.00001);
+
+    return nextGuess;
+  }
+}
+
+6.23 
+
+class test {
+    public static void main(String[] args) {
+    String str = "ambassadorial";
+    int a = count(str,'s');
+        System.out.println(a);
+
+    }
+
+    public static int count(String str, char a){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if ( a == str.charAt(i)){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+}
+
 6.24 清单2-7
 6.25 略
 6.26
 
+class test {
+    public static void main(String[] args) {
+    print(100);
+
+    }
+
+    static void print(int num){
+        int count = 0;
+
+            for (int i = 2; true ; i++) {
+                if (IsPalindrome(i) && IsPrime(i)){
+                    System.out.print(i + " ");
+                    count++;
+                    if (count % 10 == 0){
+                        System.out.println();
+                    }
+                    if (count == num) break;
+
+                }
+            }
+
+
+    }
+    
+
+    //判断是否素数
+    public static boolean IsPrime(int a){
+        for (int i = 2; i <= a / 2 ; i++) {
+            if (a % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    //判断是否回文
+    static boolean IsPalindrome(int num){
+        return num == reveersal(num);
+
+    }
+    //反转数字算法
+    static int reveersal(int num){
+        int result = 0;
+        while (num !=0){
+            result=result*10+num%10;
+            num=num/10;
+        }
+        return result;
+    }
+}
+
+6.27 套用26方法判断即可
+class test {
+    public static void main(String[] args) {
+    print(10);
+    }
+
+    static void print(int num){
+        int count = 0;
+
+            for (int i = 10; true ; i++) {
+                if (IsPalindrome(i) == false && IsPrime(i) && IsPrime(reveersal(i))){
+                    System.out.print(i + " ");
+                    count++;
+                    if (count % 10 == 0){
+                        System.out.println();
+                    }
+                    if (count == num) break;
+
+                }
+            }
+
+
+    }
+    
+
+    //判断是否素数
+    public static boolean IsPrime(int a){
+        for (int i = 2; i < a / 2 ; i++) {
+            if (a % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    //判断是否回文
+    static boolean IsPalindrome(int num){
+        return num == reveersal(num);
+
+    }
+    //反转数字
+    static int reveersal(int num){
+        int result = 0;
+        while (num !=0){
+            result=result*10+num%10;
+            num=num/10;
+        }
+        return result;
+    }
+}
+
+6.28
+
+class test {
+    public static void main(String[] args) {
+        
+        System.out.printf("%-5s %-8s%n","p","2^p-1");
+        System.out.printf("-------------%n");
+
+        for (int i = 2; i <= 31; i++) {
+            int a = (int) Math.pow(2.0, i) - 1;
+            if (IsPrime(a)){
+                System.out.printf("%-5d %-8d%n",i,a);
+            }
+        }
+
+    }
+
+
+    //判断是否素数
+    public static boolean IsPrime(int a){
+        for (int i = 2; i <= a / 2 ; i++) {
+            if (a % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
+
+
+6.29
+class test {
+    public static void main(String[] args) {
+
+
+        int temp = 2;
+
+        for (int i = 2; i < 100; i++) {
+
+            if (IsPrime(i)){
+                if ( i - temp == 2){
+                    System.out.println("(" + temp +"," + i +")");
+                }
+                temp = i;
+            }
+
+        }
+
+    }
+
+    //判断是否素数
+    public static boolean IsPrime(int a){
+        if ((a == 1) || (a == 2)) {
+            return true;
+        }
+        for (int i = 2; i <= a / 2 ; i++) {
+            if (a % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
+
+
+6.30
+
+class test {
+    public static void main(String[] args) {
+        int z = crap();
+        if (z == 2 || z == 3 || z == 12) {
+            System.out.println("You win");
+            System.exit(1);
+        }else if ( z == 7 || z == 11){
+            System.out.println("You lose");
+            System.exit(2);
+        }
+
+        int p = z;
+        System.out.println("point is " + p);
+        do {
+            z = crap();
+        }while (z != 7 && z != p);
+        if (z == 7){
+            System.out.println("You lose");
+        }else
+            System.out.println("You win");
+    }
+
+    public static int crap(){
+
+        int a = (int)(Math.random()*6) + 1;
+        int b = (int)(Math.random()*6) + 1;
+        System.out.println("You rolled " + a + " + " + b + " = " + (a + b));
+        return a + b;
+
+    }
+
+}
+
+6.31  太难了，看着答案理解了写的
+import java.util.Scanner;
+
+class test {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a credit card number as a long integer: ");
+        long number = input.nextLong();
+
+        if (isValid(number))
+            System.out.println(number + " is valid");
+        else
+            System.out.println(number + " is invalid");
+
+    }
+
+    //检查卡片是否合法
+    public static boolean isValid(long num){
+        return  (getSize(num) >= 13 && getSize(num) <= 16 && prefixMatched(num , 4) || prefixMatched(num , 5)
+        || prefixMatched(num , 37) || prefixMatched(num , 37) && (sumOfDoubleEvenPlace(num) + sumOfOddPlace(num))
+            % 10 ==0);
+    }
+
+    //第二步求偶数翻倍的和
+    public static int sumOfDoubleEvenPlace(long num){
+        int result = 0;
+        num = num / 10;
+        while (num != 0) {
+            result += getDigit((int)((num % 10) * 2));
+            num = num / 100;
+        }
+
+        return result;
+    }
+
+    //返回这个数字如果是个位数，否则返回这个数字的和
+    public static int getDigit(int num){
+        return num % 10 + (num / 10);
+    }
+
+    //返回这个数字的奇数位数字的和
+    public  static int sumOfOddPlace(long num){
+        int sum = 0;
+        while (num !=0){
+            sum += num % 10;
+            num = num / 100;
+        }
+        return sum;
+    }
+
+    //返回num数字d位数的数字是否和d想等
+    public static boolean prefixMatched(long num, int d){
+        return getPrefix(num , getSize(d)) == d;
+
+    }
+
+    //返回数字的位数
+    public static int getSize(long d){
+        int size = 0;
+        while (d !=0){
+            size++;
+            d = d/10;
+        }
+        return size;
+    }
+
+    //返回从左开始的K位数的数字（如K=99，则返回2位数,k=100则返回3位数）
+    public static long getPrefix(long num,int k){
+        long result = num;
+        for (int i = 0; i < getSize(num) - k ; i++) {
+            result = result / 10;
+        }
+
+        return result;
+    }
+
+
+}
+
+6.32 添加计数器计算赢的次数
 
 
 
