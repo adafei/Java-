@@ -353,3 +353,170 @@ public class Exercise07_21 {
 
 7.22 略
 
+7.23 
+public class Exercise07_23 {
+  public static void main(String[] args) {
+    // Declare a constant value for the number of lockers
+    final int NUMBER_OF_LOCKER = 100;
+
+    // Create an array to store the status of each array
+    // The first student closed all lockers, each lockers[i] is false
+    boolean[] lockers = new boolean[NUMBER_OF_LOCKER];
+    
+    // Each student changes the lockers
+    for (int j = 1; j <= NUMBER_OF_LOCKER; j++) {
+      // Student Sj changes every jth locker
+      // starting from the lockers[j - 1].
+      for (int i = j - 1; i < NUMBER_OF_LOCKER; i =i + j) {
+        lockers[i] = !lockers[i];
+      }
+    }
+
+    // Find which one is open
+    for (int i = 0; i < NUMBER_OF_LOCKER; i++) {
+      if (lockers[i])
+        System.out.println("Locker " + (i + 1) + " is open");
+    }
+  }
+}
+
+7.24 看不懂题目 放标准答案
+public class Exercise07_24 {
+  public static void main(String[] args) {
+    final int NUMBER_OF_CARDS = 52;
+    String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
+    String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9",
+      "10", "Jack", "Queen", "King"};
+    // found indicates whether a suit has been picked
+    boolean[] found = new boolean[4]; 
+
+    // Count the number of picks
+    int numberOfPicks = 0;
+    
+    // Count occurrence in each suit
+    int count = 0;
+    while (count < 4) {
+      numberOfPicks++;
+      int index = (int)(Math.random() * NUMBER_OF_CARDS);
+      if (!found[index / 13]) {
+        found[index / 13] = true;
+        count++;
+        
+        String suit = suits[index / 13];
+        String rank = ranks[index % 13];
+        System.out.println(rank + " of " + suit);
+      }
+    }
+    
+    System.out.println("Number of picks: " + numberOfPicks);
+  }
+}
+
+7.25 26 27 略
+
+7.28
+
+7.30 布尔类型判断是否连续相同
+public class Exercise07_30 {
+  public static void main (String[] args) {
+    java.util.Scanner input = new java.util.Scanner(System.in);
+    
+    System.out.print("Enter the number of values: ");
+    int size = input.nextInt();
+    
+    int[] values = new int[size];
+    
+    System.out.print("Enter the values: ");
+    for (int i = 0; i < values.length; i++)
+      values[i] = input.nextInt();
+    
+    if (isConsecutiveFour(values))
+      System.out.println("The list has consecutive fours");
+    else
+    	System.out.println("The list has no consecutive fours");
+  }
+
+  public static boolean isConsecutiveFour(int[] values) {    
+    for (int i = 0; i < values.length - 3; i++) {
+      boolean isEqual = true;        
+      for (int j = i; j < i + 3; j++) {
+        if (values[j] != values[j + 1]) {
+          isEqual = false;
+          break;
+        }
+      }
+     
+      if (isEqual) return true;
+    }
+    
+    return false;
+  }
+  
+  public static boolean isConsecutiveFourVersionII(int[] values) {    
+    outer: for (int i = 0; i < values.length - 3; i++) {
+      for (int j = i; j < i + 3; j++)
+        if (values[j] != values[j + 1])
+          continue outer; // See Supplement Part III.E statement labels
+      return true;
+    }
+    
+    return false;
+  }
+}
+
+7.31 没脸放自己的笨方法，放上课后答案
+public class Exercise07_31 {
+  public static void main(String[] args) {
+    java.util.Scanner input = new java.util.Scanner(System.in);
+
+    // Enter values for list1
+    System.out.print("Enter list1: ");
+    int size1 = input.nextInt();
+    int[] list1 = new int[size1];    
+    for (int i = 0; i < list1.length; i++) 
+      list1[i] = input.nextInt();
+    
+    // Enter values for list2
+    System.out.print("Enter list2: ");
+    int size2 = input.nextInt();
+    int[] list2 = new int[size2];
+    for (int i = 0; i < list2.length; i++) 
+      list2[i] = input.nextInt();
+    
+    int[] list3 = merge(list1, list2);
+    
+    for (int i = 0; i < list3.length; i++) 
+      System.out.print(list3[i] + " ");
+  }
+  
+  public static int[] merge(int[] list1, int[] list2) {   
+    int[] result = new int[list1.length + list2.length];
+
+    int current1 = 0; // Current index in list1
+    int current2 = 0; // Current index in list2
+    int current3 = 0; // Current index in result
+
+    while (current1 < list1.length && current2 < list2.length) {
+      if (list1[current1] < list2[current2])
+        result[current3++] = list1[current1++];
+      else
+        result[current3++] = list2[current2++];
+    }
+
+    while (current1 < list1.length)
+      result[current3++] = list1[current1++];
+
+    while (current2 < list2.length)
+      result[current3++] = list2[current2++];
+
+    return result;
+  }
+}
+
+7.32 没动图看不懂代码
+
+7.33略
+后面太难不会
+
+
+
