@@ -117,3 +117,39 @@ class test {
 }
 
 7.5
+import java.util.Scanner;
+
+class test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] a = new int[10];
+        int num = 0;//不重复的数字计时器（实际的不重复数组下标）
+
+        System.out.print("Enter " + a.length + "numbers:");
+        for (int i = 0; i < a.length ; i++) {
+            int value = input.nextInt();//循环读取a.length数量的数字
+
+            boolean in = false;//检查条件
+            //同步检查数字是否在数组里面
+            for (int j = 0; j < num; j++) {
+                if (value == a[j]){
+                    in = true;
+                }
+            }
+            //添加进数组
+            if (!in){
+                a[num] = value;
+                num++;
+            }
+        }
+
+        System.out.println("the number of distinct number is " + num);
+        System.out.print("the distinct number are:");
+        for (int i = 0; i < num ; i++) {
+            System.out.print(a[i] + " ");
+
+        }
+    }
+}
+
+7.6
