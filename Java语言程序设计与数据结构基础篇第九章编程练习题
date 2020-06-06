@@ -1,1 +1,36 @@
+9.1
+public class Test {
+    public static void main(String[] args) {
+        Rectangle a = new Rectangle(4 ,40);
+        Rectangle b = new Rectangle(3.5,35.9);
+        System.out.println("a: widt " + a.widt + ",height " + a.height + ",Area " +
+                a.getArea() + ",Perimeter " + a.getPerimeter());
+        System.out.println("b: widt " + b.widt + ",height " + b.height + ",Area " +
+                b.getArea() + ",Perimeter " + b.getPerimeter());
+    }
+}
 
+class Rectangle {
+    double widt = 1;
+    double height = 1;
+
+    public Rectangle() {
+    }
+
+    public Rectangle(double widt, double height) {
+        this.widt = widt;
+        this.height = height;
+    }
+
+    public double getArea(){
+        this.widt = widt;
+        this.height = height;
+        return widt * height;
+    }
+
+    public double getPerimeter(){
+        this.widt = widt;
+        this.height = height;
+        return (widt + height) * 2;
+    }
+}
