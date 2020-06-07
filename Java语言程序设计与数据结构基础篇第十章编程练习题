@@ -71,3 +71,169 @@ class Time{
         hour = (int) (totalHour % 60);
     }
 }
+
+10.3
+
+public class Test {
+    public static void main(String[] args) {
+        MyInteger n1 = new MyInteger(5);
+        System.out.println("n1 is even? " + n1.isEven());
+        System.out.println("n1 is prime? " + n1.isPrime());
+        System.out.println("15 is prime? " + MyInteger.isPrime(15));
+
+        char[] chars = {'3', '5', '3', '9'};
+        System.out.println(MyInteger.parseInt(chars));
+
+        String s = "3539";
+        System.out.println(MyInteger.parseInt(s));
+
+        MyInteger n2 = new MyInteger(24);
+        System.out.println("n2 is odd? " + n2.isOdd());
+        System.out.println("45 is odd? " + MyInteger.isOdd(45));
+        System.out.println("n1 is equal to n2? " + n1.equals(n2));
+        /*
+        n1 is even? false
+        n1 is prime? true
+        15 is prime? false
+        3539
+        3539
+        n2 is odd? false
+        45 is odd? true
+        n1 is equal to n2? false
+        n1 is equal to 5? true
+
+         */
+        System.out.println("n1 is equal to 5? " + n1.equals(5));
+
+
+
+
+    }
+
+}
+
+class MyInteger{
+    private int vule;
+
+    public MyInteger(int vule) {
+        this.vule = vule;
+    }
+
+    public int getVule() {
+        return vule;
+    }
+
+    public boolean isEven(){
+        return isEven(vule);
+    }
+
+    public static boolean isEven(int num){
+        return num % 2 == 0;
+    }
+
+    public boolean isOdd(){
+        return isOdd(vule);
+    }
+
+
+    public static boolean isOdd(int num){
+        return num % 2 != 0;
+    }
+
+    public boolean isPrime(){
+        return isPrime(vule);
+    }
+
+    public static boolean isPrime(int num) {
+        if ( num == 1 || num == 2){
+            return true;
+        }
+
+        for (int i = 2; i < num / 2 ; i++) {
+            if ( num % i == 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean isEven(MyInteger num){
+        return isEven(num.getVule());
+    }
+
+    public static boolean isOdd(MyInteger num){
+        return isOdd(num.getVule());
+    }
+
+    public static boolean isPrime(MyInteger num){
+        return isPrime(num.getVule());
+    }
+
+    public boolean equals(int num){
+        return num == vule;
+    }
+
+    public boolean equals(MyInteger num){
+        return num.getVule() == vule;
+    }
+
+    public static int parseInt(char[] num){
+        int result = 0;
+        for (int i = 0; i < num.length ; i++) {
+            result = result * 10 + (num[i] - '0');
+        }
+        return result;
+    }
+
+    public static int parseInt(String num){
+        int result = 0;
+        for (int i = 0; i < num.length() ; i++) {
+            result = result * 10 + (num.charAt(i) - '0');
+        }
+        return result;
+    }
+
+}
+
+10.4
+public class test01 {
+    public static void main(String[] args) {
+        MyPoint p1 = new MyPoint(0, 0);
+        MyPoint p2 = new MyPoint(10, 30.5);
+        System.out.println(p1.distance(p2));
+        System.out.println(MyPoint.distance(p1,p2));
+
+    }
+}
+
+class MyPoint{
+    double x;
+    double y;
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public MyPoint() {
+    }
+
+    public MyPoint(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double distance(MyPoint p){
+        return distance(this, p);
+    }
+    public static double distance(MyPoint p1, MyPoint p2){
+        return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+    }
+}
+
+10.7
+
