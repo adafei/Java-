@@ -236,4 +236,163 @@ class MyPoint{
 }
 
 10.7
+import java.util.Date;
+import java.util.Scanner;
+
+
+public class ATM {
+    private static Scanner input = new Scanner(System.in);
+    int id;
+    private Account[] accounts = new Account[10];
+
+    public static void main(String[] args) {
+        new ATM();
+    }
+
+    //构造ATM
+    public ATM() {
+
+        for (int i = 0; i < accounts.length ; i++) {
+            accounts[i] = new Account();
+            accounts[i].setId(i);
+            accounts[i].setBalance(100);
+        }
+
+
+
+        continueATM:
+        while (true){
+            System.out.print("请输入ID:");
+            id = input.nextInt();
+            if (id < 0 || id > 10){
+                System.out.println("请输入正确的ID!");
+                continue;
+            }
+
+            while (true){
+                int choice = getChoice();
+                switch (choice){
+                    case 1:
+                        System.out.println("余额是:" + accounts[id].getBalance());break ;
+                    case 2:
+                        withdraw();break ;
+                    case 3:
+                        deposit();break ;
+                    case 4:
+                        continue continueATM;
+                }
+            }
+        }
+
+    }
+
+
+    //提款方法
+    public void withdraw(){
+        System.out.println("请输入提款金额:");
+        double amount = input.nextDouble();
+        if (amount <= accounts[id].getBalance()) {
+            accounts[id].withDraw(amount);
+            System.out.println("余额:" + accounts[id].getBalance());
+        }else
+            System.out.println("提款额高于余额!");
+    }
+
+    //存款方法
+    public void deposit(){
+        System.out.println("请输入存款金额:");
+        double amount = input.nextDouble();
+        if (amount > 0) {
+            accounts[id].deposit(amount);
+            System.out.println("余额:" + accounts[id].getBalance());
+        }else
+            System.out.println("金额不能为负数!");
+    }
+
+    //主菜单
+    public int getChoice(){
+        int choice;
+        while (true) {
+            System.out.println("功能列表");
+            System.out.println("1:查询余额");
+            System.out.println("2:提款");
+            System.out.println("3:存款");
+            System.out.println("4:退出");
+            System.out.print("请输入选项:");
+            choice = input.nextInt();
+            if (choice > 4 || choice < 1) {
+                System.out.println("错误选项，请重新输入！");
+            } else
+                break;
+        }
+        return choice;
+    }
+}
+
+class Account{
+    private int id = 0;
+    private double balance = 0;
+    private static double annualInterestRate = 0;
+    private Date dateCreated = new Date();
+
+    public Account() {
+    }
+
+    public Account(int id, double balance) {
+        this.id = id;
+        this.balance = balance;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public static double getAnnualInterestRate() {
+        return annualInterestRate;
+    }
+
+    public static void setAnnualInterestRate(double annualInterestRate) {
+        Account.annualInterestRate = annualInterestRate;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public double getMonthInterestRate(){
+        return annualInterestRate / 100 / 12;
+    }
+
+    public double getMonthInterest(){
+        return balance * getMonthInterestRate();
+    }
+
+    public void  withDraw(double num){
+        balance -= num;
+    }
+
+    public void deposit(double num){
+        balance += num;
+    }
+
+    public void print(){
+        System.out.println("Id:" + getId());
+        System.out.println("Balance:" + getBalance());
+        System.out.println("MonthInterest:" + getMonthInterest());
+        System.out.println("OpenDate:" + getDateCreated());
+    }
+}
+
 
